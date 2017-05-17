@@ -1,6 +1,6 @@
 // load externals
 
 module.exports = {
-  'jssocketclient': require('JSSocketClient'),
-  'jssocketserver': require('JSSocketServer'),
+  'jssocketclient': require('./JSSocketClient.js'),
+  'jssocketserver': require('./JSSocketServer.js'),
 };
