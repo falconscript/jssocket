@@ -1,0 +1,15 @@
+{
+  "name": "jssocket",
+  "private": false,
+  "version": "1.0.0",
+  "description": "ES6 JS class to spawn and manage external processes",
+  "keywords": ["jssocket", "socket", "server", "client", "networking", "net", "native", "tcp", "sockets" ],
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/falconscript/jssocket"
+  }
+}
+
+
