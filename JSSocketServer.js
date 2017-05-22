@@ -58,7 +58,6 @@ class JSSocketServer {
        // send completed messages to onSocketMessage
        while (msgArr.length) {
          var msg = msgArr.shift(); // get first
-         //sails.log.debug("[D] REC'd MSG: ", msg);
          this.onSocketMessage(socket, msg);
        }
      });

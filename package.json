@@ -1,8 +1,8 @@
 {
   "name": "jssocket",
   "private": false,
-  "version": "1.0.1",
-  "description": "ES6 JS class to spawn and manage external processes",
+  "version": "1.0.2",
+  "description": "ES6 JS classes for socket client and server message passing",
   "keywords": ["jssocket", "socket", "server", "client", "networking", "net", "native", "tcp", "sockets" ],
   "dependencies": {
   },
