@@ -1,7 +1,7 @@
 {
   "name": "jssocket",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ES6 JS classes for socket client and server message passing",
   "keywords": ["jssocket", "socket", "server", "client", "networking", "net", "native", "tcp", "sockets" ],
   "dependencies": {

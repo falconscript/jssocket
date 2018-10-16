@@ -1,6 +1,6 @@
 "use strict";
 
-var net = require('net'),
+const net = require('net'),
     process = require('process');
 
  /**
@@ -27,18 +27,18 @@ var net = require('net'),
     //this.sock.setTimeout(5000, this.onSocketTimeout.bind(this)); // forget it I guess, calls before connect!!
     this.sock.on('error', this.onSocketError.bind(this));
 
-    var partial = '';
+    let partial = '';
     this.sock.on('data', (data) => {
 
      partial += data.toString();
 
-     var msgArr = partial.split(this.delimiter);
+     let msgArr = partial.split(this.delimiter);
      // set to either the last part of the message or '' if ended on a complete message
      partial = msgArr.pop();
 
      // send completed messages to onSocketMessage
      while (msgArr.length) {
-       var msg = msgArr.shift(); // get first
+       let msg = msgArr.shift(); // get first
        //console.log("[D] REC'd MSG: ", msg);
        this.onSocketMessage(msg);
      }
@@ -61,7 +61,7 @@ var net = require('net'),
   }
 
   disconnectSocket () {
-    this.sock.close();
+    this.sock.destroy();
   }
 
   // Does NOT include delimiter (newline by default). Include before sending!
