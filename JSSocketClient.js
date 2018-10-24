@@ -65,16 +65,12 @@ const net = require('net'),
   }
 
   // Does NOT include delimiter (newline by default). Include before sending!
-  sendDataLine (dataLine, callbackUponSending) {
+  sendDataLine (dataLine, callbackUponSending, encoding="utf8") {
     if (this.socketConnected) {
      // Returns true if the entire data was flushed successfully to the kernel buffer.
      // Returns false if all or part of the data was queued in user memory.
      // 'drain' will be emitted when the buffer is again free.
-     this.sock.write(dataLine, () => { // function calls onComplete of write
-       if (typeof(callbackUponSending) == "function") {
-         return callbackUponSending();
-       }
-     });
+     this.sock.write(dataLine, encoding, callbackUponSending); // function calls onComplete of write
     } else {
      console.log("[D]", this.constructor.name, " - SOCK DC'd when sendDataLine called! QUEUEING.");
      this.queuedMessages.push(dataLine);
